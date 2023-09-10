@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "GB_SQLite",
+            "database": "W:\\DATA\\STUDY\\GB2\\21. Базы данных и SQL\\PracticeDB.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
