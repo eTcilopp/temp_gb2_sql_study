@@ -29,7 +29,7 @@ group by
 
 -- * Выведите номер пользователя, который отправил больше всех заявок в друзья (таблица friend_requests) [LIMIT].
 select 
-    fr.initiator_user_id as user_issued_max_friend_requests
+	fr.initiator_user_id as user_issued_max_friend_requests
 from 
 	friend_requests fr 
 group by
@@ -37,4 +37,15 @@ group by
 order by 
 	count(fr.initiator_user_id) desc
 limit 1
-	
+
+--* Выведите названия и номера групп, имена которых состоят из 5 символов [LIKE].
+
+
+select
+com.id,	
+com.name
+from 
+	communities com
+where 
+	com.name like '_____'
+
