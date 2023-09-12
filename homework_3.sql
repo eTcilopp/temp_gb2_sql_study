@@ -42,8 +42,8 @@ limit 1
 
 
 select
-com.id,	
-com.name
+    com.id,	
+    com.name
 from 
 	communities com
 where 
