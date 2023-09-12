@@ -5,6 +5,19 @@
             "driver": "SQLite",
             "name": "GB_SQLite",
             "database": "W:\\DATA\\STUDY\\GB2\\21. Базы данных и SQL\\PracticeDB.db"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "gb2_sql_course",
+            "database": "vk",
+            "username": "root"
         }
     ],
     "sqltools.useNodeRuntime": true
