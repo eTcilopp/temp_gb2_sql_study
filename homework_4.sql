@@ -24,6 +24,8 @@ GROUP BY ucom.community_id
 найдите человека, который больше всех общался с выбранным пользователем 
 (написал ему сообщений). */
 
+-- Ищем для пользователя с id=1
+
 SELECT
     msg.from_user_id,
     us.email as from_email,
