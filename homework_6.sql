@@ -168,3 +168,30 @@ DELIMITER ;
 
 call sp_remove_user(19, @tran_result)
 select @tran_result;
+
+
+/*
+* Написать триггер, который проверяет новое появляющееся сообщество. 
+Длина названия сообщества (поле name) должна быть не менее 5 символов. 
+Если требование не выполнено, то выбрасывать исключение с пояснением.
+*/
+
+CREATE TRIGGER `check_new_community_name_length` 
+BEFORE INSERT ON `communities` 
+FOR EACH ROW 
+begin
+    IF length(NEW.name) < 5 THEN
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Обновление отменено. Имя группы должно состоять минимум из 5 букв.';
+    END IF;
+end
+
+-- Проверка
+insert into communities 
+values(100, 'test')
+
+/* Результат
+
+SQL Error [1644] [45000]: Обновление отменено. Имя группы должно состоять минимум из 5 букв.
+
+*/
